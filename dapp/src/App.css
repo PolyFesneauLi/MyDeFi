@@ -36,3 +36,166 @@
     transform: rotate(360deg);
   }
 }
+
+/* PayPal Integration Styles */
+.paypal-button-container {
+  width: 100%;
+  min-height: 200px;
+  margin: 20px 0;
+}
+
+#result-message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Success Message Styles */
+.success-message {
+  background-color: #f2faf5;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(46, 125, 50, 0.1);
+}
+
+.success-header {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2e7d32;
+  position: relative;
+  padding-left: 30px;
+}
+
+.success-header:before {
+  content: "✅";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+}
+
+.success-details {
+  margin: 15px 0;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #2e7d32;
+}
+
+.success-row {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #c8e6c9;
+}
+
+.success-row:last-child {
+  border-bottom: none;
+}
+
+.success-label {
+  font-weight: bold;
+  width: 120px;
+  color: #555;
+}
+
+.success-value {
+  flex: 1;
+  font-weight: 500;
+}
+
+.success-footer {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #2e7d32;
+  padding: 10px;
+  background-color: #e8f5e9;
+  border-radius: 6px;
+}
+
+/* Warning Message Styles */
+.warning-message {
+  background-color: #fff8e1;
+  color: #f57c00;
+  border: 1px solid #ffe082;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(245, 124, 0, 0.1);
+}
+
+.warning-header {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f57c00;
+  position: relative;
+  padding-left: 30px;
+}
+
+.warning-header:before {
+  content: "⚠️";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+}
+
+.warning-details {
+  margin: 15px 0;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #f57c00;
+  text-align: center;
+}
+
+/* Error Message Styles */
+.error-message {
+  background-color: #fef5f5;
+  color: #d32f2f;
+  border: 1px solid #ffcdd2;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(211, 47, 47, 0.1);
+}
+
+.error-header {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #d32f2f;
+  position: relative;
+  padding-left: 30px;
+}
+
+.error-header:before {
+  content: "❌";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+}
+
+.error-details {
+  margin: 15px 0;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #d32f2f;
+  word-break: break-word;
+}
