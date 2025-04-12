@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { Card, Col, Row, Statistic, Button, Modal, Input, message, Divider, InputNumber, Space } from 'antd';
 import { WalletOutlined, SwapOutlined, DollarOutlined } from '@ant-design/icons';
-import { initializePayPalButton, resetPayPalButton } from '../assets/paypal-integration';
+import { initializePayPalButton, resetPayPalButton, updateRecipientAddress } from '../assets/paypal-integration';
 
 function convert(n) {
     //window.web
@@ -19,6 +19,7 @@ export default function Balance() {
     const [payPalModal, setPayPalModal] = useState(false);
     const [amount, setAmount] = useState('');
     const [kwtAmount, setKwtAmount] = useState(1);
+    const [ethAddress, setEthAddress] = useState('');
     
     // Reference to store the exchange rate and currentAmount
     const KWT_HKD_RATE = 100; // 1 KWT = 100 HKD
@@ -37,16 +38,23 @@ export default function Balance() {
             console.log("PayPal modal opened, initializing button...");
             // Slight delay to ensure modal is fully rendered
             setTimeout(() => {
-                initializePayPalButton(currentKwtAmountRef.current, KWT_HKD_RATE);
+                initializePayPalButton(currentKwtAmountRef.current, KWT_HKD_RATE, ethAddress);
             }, 300);
         }
-    }, [payPalModal]);
+    }, [payPalModal, ethAddress]);
 
     // Function to handle KWT amount change - only store the value without re-rendering PayPal
     const handleKwtAmountChange = (value) => {
         const newAmount = value || 1; // Default to 1 if empty
         setKwtAmount(newAmount);
         currentKwtAmountRef.current = newAmount;
+    };
+
+    // Function to handle Ethereum address change
+    const handleEthAddressChange = (e) => {
+        const address = e.target.value;
+        setEthAddress(address);
+        updateRecipientAddress(address);
     };
 
     // Function to update PayPal button with current amount
@@ -277,6 +285,15 @@ export default function Balance() {
                                 value={(kwtAmount * KWT_HKD_RATE).toFixed(2)}
                                 disabled
                                 suffix="HKD"
+                            />
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', marginTop: '15px' }}>
+                            <span style={{ marginRight: '10px', minWidth: '120px' }}>Ethereum Address:</span>
+                            <Input
+                                style={{ width: '100%' }}
+                                value={ethAddress}
+                                onChange={handleEthAddressChange}
+                                placeholder="Enter your Ethereum address (0x...)"
                             />
                         </div>
                     </Space>
