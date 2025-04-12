@@ -133,5 +133,5 @@ await web.exchange.methods.makeOrder(
 ```
 
 ## Contact
-Feng Yujie - fengyujie0104@gamil.com 
+Feng Yujie 
 
