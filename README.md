@@ -49,14 +49,16 @@ async function deploy() {
   // Deploy Exchange (5% fee)
   const Exchange = await ethers.getContractFactory("Exchange");
   const exchange = await Exchange.deploy(deployer.address, 5);
-}
-## 2. Deposit Funds
-
-### ETH Deposit:
+}  
+  
+  
+## 2. Deposit Funds  
+  
+### ETH Deposit:  
 ```javascript
 await exchange.depositEther({ value: ethers.utils.parseEther("1.0") });
 ## Token Deposit
-
+  
 ```javascript
 // Approve first
 await token.approve(exchange.address, ethers.utils.parseUnits("100", 18));
