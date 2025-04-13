@@ -1,6 +1,3 @@
-/*
- * @作者: kerwin
- */
 import { createSlice } from '@reduxjs/toolkit'
 
 export const balanceSlice = createSlice({
