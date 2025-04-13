@@ -1,5 +1,59 @@
 # MyDeFi
 
+# Decentralized Exchange (DEX) & ERC20 Token Smart Contracts
+
+![Solidity](https://img.shields.io/badge/Solidity-0.8.x-blue?logo=solidity)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+A decentralized exchange (DEX) system with an ERC20-compliant token (`KerwinToken`) and an order-matching exchange platform (`Exchange`).
+
+## Contracts Overview
+
+### 1. KerwinToken.sol
+​**ERC20 Token Implementation**​  
+- Name: `KerwinToken`
+- Symbol: `KWT`
+- Decimals: `18`
+- Total Supply: `1,000,000 KWT` (minted to deployer)
+
+#### Key Features:
+- ERC20 standard functions (`transfer`, `approve`, `transferFrom`)
+- SafeMath integration (for Solidity <0.8.0 compatibility)
+- Events: `Transfer`, `Approval`
+
+### 2. Exchange.sol
+​**Decentralized Exchange Platform**​  
+- Supports ETH and ERC20 token trading
+- Fee mechanism (configurable fee account & percentage)
+- Order book with create/cancel/fill functionality
+
+#### Key Features:
+- Deposit/Withdraw ETH and ERC20 tokens
+- Maker-Taker order matching
+- Fee calculation on order fulfillment
+- Event logging for all operations
+
+# Usage
+
+## 1. Deploy Contracts
+
+```javascript
+// Hardhat deployment script
+async function deploy() {
+  const [deployer] = await ethers.getSigners();
+  
+  // Deploy KerwinToken
+  const Token = await ethers.getContractFactory("KerwinToken");
+  const token = await Token.deploy();
+  
+  // Deploy Exchange (5% fee)
+  const Exchange = await ethers.getContractFactory("Exchange");
+  const exchange = await Exchange.deploy(deployer.address, 5);
+}
+## 2. Deposit Funds
+
+
+
 ## Setup and Run Instructions
 
 Follow these steps to set up and run the MyDeFi DApp:
@@ -8,6 +62,7 @@ Follow these steps to set up and run the MyDeFi DApp:
 - [Node.js](https://nodejs.org/) (v14.x or later)
 - [Truffle](https://www.trufflesuite.com/truffle)
 - [Ganache](https://www.trufflesuite.com/ganache)
+- MetaMask (for wallet interaction)
 
 ### Step 1: Start the local blockchain
 1. Launch Ganache to start a local Ethereum network
