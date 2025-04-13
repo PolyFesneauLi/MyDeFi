@@ -1,6 +1,3 @@
-/*
- * @作者: kerwin
- */
 import {configureStore} from '@reduxjs/toolkit'
 import balanceReducer from './slices/balanceSlice'
 import orderReducer from './slices/orderSlice'

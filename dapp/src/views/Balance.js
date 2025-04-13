@@ -1,6 +1,3 @@
-/*
- * @作者: kerwin
- */
 import React, { useState, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { Card, Col, Row, Statistic, Button, Modal, Input, message, Divider, InputNumber, Space } from 'antd';

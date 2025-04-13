@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: GPL-3.0 
-// 源码遵循协议， MIT...
 pragma solidity >=0.4.16 <0.9.0; //限定solidity编译器版本
 
 contract StudentStorage{

@@ -1,6 +1,3 @@
-/*
- * @作者: kerwin
- */
 import {createSlice,createAsyncThunk} from "@reduxjs/toolkit"
 
 
