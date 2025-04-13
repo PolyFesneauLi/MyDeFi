@@ -52,7 +52,56 @@ async function deploy() {
 }
 ## 2. Deposit Funds
 
+### ETH Deposit:
+```javascript
+await exchange.depositEther({ value: ethers.utils.parseEther("1.0") });
+## Token Deposit
 
+```javascript
+// Approve first
+await token.approve(exchange.address, ethers.utils.parseUnits("100", 18));
+// Then deposit
+await exchange.depositToken(token.address, ethers.utils.parseUnits("100", 18));
+
+## 3. Create Order
+
+```javascript
+// Create order: Sell 1 ETH for 100 KWT
+await exchange.makeOrder(
+  ethers.constants.AddressZero, // ETH
+  ethers.utils.parseEther("1"),
+  token.address,
+  ethers.utils.parseUnits("100", 18)
+);
+## 4. Fill Order
+
+```javascript
+// Fill order ID 1
+await exchange.fillOrder(1);
+## Security Considerations
+
+### KerwinToken
+- Uses SafeMath for arithmetic operations (when using Solidity <0.8.0)
+- Implements ERC20 standard safely
+- Includes allowance protection patterns
+
+### Exchange
+- Reentrancy protection through checks-effects-interactions
+- Validates:
+  - Token address ≠ address(0)
+  - Order existence before execution
+  - Sufficient balances before transactions
+- Uses `.call{value}()` instead of `.transfer()` for ETH withdrawals
+
+## Key Events
+
+| Event         | Description                          |
+|---------------|--------------------------------------|
+| Deposit       | Funds deposited to exchange          |
+| Withdraw      | Funds withdrawn from exchange        |
+| OrderCreated  | New order added to order book        |
+| OrderCanceled | Order canceled by maker              |
+| OrderFilled   | Order executed by taker              |
 
 ## Setup and Run Instructions
 
