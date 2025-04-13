@@ -107,6 +107,7 @@ await exchange.fillOrder(1);
 | OrderCanceled | Order canceled by maker              |
 | OrderFilled   | Order executed by taker              |
 
+## Business logic diagram
 ![pic01](https://github.com/user-attachments/assets/9612d382-3a7e-4199-9e59-01e18956148d)
 
   
