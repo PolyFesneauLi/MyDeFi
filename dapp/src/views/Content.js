@@ -1,6 +1,3 @@
-/*
- * @作者: kerwin
- */
 import {useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import Web3 from 'web3'

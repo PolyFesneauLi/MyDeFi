@@ -1,6 +1,3 @@
-/*
- * @作者: kerwin
- */
 const Contacts = artifacts.require("StudentStorage.sol")
 
 module.exports =async  function(callback){

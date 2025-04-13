@@ -1,6 +1,3 @@
-/*
- * @作者: kerwin
- */
 const Contacts = artifacts.require("KerwinToken.sol")
 const Exchange = artifacts.require("Exchange.sol")
 

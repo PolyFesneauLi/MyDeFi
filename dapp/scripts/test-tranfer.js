@@ -1,6 +1,3 @@
-/*
- * @作者: kerwin
- */
 const KerwinToken = artifacts.require("KerwinToken.sol")
 
 const fromWei = (bn)=>{

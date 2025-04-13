@@ -1,6 +1,3 @@
-/*
- * @作者: kerwin
- */
 const KerwinToken = artifacts.require("KerwinToken.sol")
 const Exchange = artifacts.require("Exchange.sol")
 const ETHER_ADDRESS = '0x0000000000000000000000000000000000000000' // 0x 后面 40 个 0

@@ -1,6 +1,27 @@
-# Standard Integration Node.js Sample
+# PayPal Payment Processing Service
 
-PayPal Standard Integration in Node.js
+A backend service built with Express and PayPal Server-Side SDK for handling payment order creation and capture.
+
+## Features
+
+- Create PayPal payment orders
+- Capture created payment orders
+- CORS support for cross-origin requests
+- Sandbox environment integration
+- Request/response logging
+- Dynamic amount calculation (based on cart items)
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js 16+
+- PayPal Developer Account
+- Valid PayPal API credentials
+
+
+
+
 
 ## Running the sample
 
