@@ -15,12 +15,16 @@ https://drive.google.com/file/d/1LVsCR8kEJtF7vZtHXDnJazMSgQy251eV/view?usp=drive
 
 ```shell
 docker load -i MyDeFi2.tar
-docker images # will find mydefi2img in list
+docker images # will find mydefi2image in list
 ```
 
 ```shell
-docker run -it -p 8545:8545 --name MyDeFi2 mydefi-image-with-state /bin/bash
-/usr/workspace/Project/Final/MyDeFi/
+## create an docker with img
+docker run -it -p 8545:8545 --name MyDeFi2 mydefi2image /bin/bash
+cd /usr/workspace/Project/Final/MyDeFi/
+
+# restart MyDefi2
+docker exec -it -w /usr/workspace/Project/Final/MyDeFi MyDeFi2 /bin/bash
 ```
 
 ### Environment Setup
